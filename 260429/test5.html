@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="textBox">사용자</p>
+<button id="scissors" class="btn">가위</button>
+<button id="rock" class="btn">바위</button>
+<button id="paper" class="btn">보</button>
+
+<script>
+const textBox =document.querySelector("#textBox");
+const scissors =document.querySelector("#scissors");
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const arr = ["가위","바위","보"];
+
+function scissorsST(){
+    const randomArr = arr[Math.floor(Math.random()*3)];
+    if(randomArr === "가위"){
+        textBox.innerHTML=`비겼습니다`;
+    }else if (randomArr === "보"){
+        textBox.innerHTML=`이겼습니다`;
+    }else{
+        textBox.innerHTML=`졌습니다`;
+    }
+    }
+    scissors.addEventListener("click",scissorsST);
+
+function rockST(){
+    const randomArr = arr[Math.floor(Math.random()*3)];
+    if(randomArr==="바위"){
+        textBox.innerHTML=`비겼습니다`;
+    }else if (randomArr === "보"){
+        textBox.innerHTML=`졌습니다`;
+    }else{
+        textBox.innerHTML=`이겼습니다`;
+    }
+}
+rock.addEventListener("click",rockST);
+function paperST(){
+    const randomArr = arr[Math.floor(Math.random()*3)];
+    if(randomArr === "보"){
+        textBox.innerHTML=`비겼습니다`;
+    }else if (randomArr === "가위"){
+        textBox.innerHTML=`졌습니다`;
+    }else{
+        textBox.innerHTML=`이겼습니다`;
+    }
+}
+paper.addEventListener("click",paperST);
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

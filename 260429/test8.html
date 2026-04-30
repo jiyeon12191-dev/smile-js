@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <input type="text" id="name">
+<script>
+    const btn = document.querySelector("#btn")
+function username(){
+    const name = document.querySelector("#name");
+    if (name!=null){
+       alert(name.value);
+    }
+}
+
+btn.addEventListener("click",username);
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="addbtn">증가</button>
+    <button id="redbtn">감소</button>
+    <button id="reset">초기화</button>
+    <div id="textBox">카운트</div>
+
+    
+    <script>
+  const addbtn = document.querySelector("#addbtn");
+  const textBox = document.querySelector("#textBox");
+
+  let count =0;
+  function countUp(){
+    count ++;
+    textBox.innerHTML=`${count}`
+  }
+  addbtn.addEventListener("click",countUp);
+
+  const redbtn = document.querySelector("#redbtn");
+  function countDown(){
+    count --;
+    textBox.innerHTML=`${count}`
+  }
+ redbtn.addEventListener("click",countDown);
+
+ const reset = document.querySelector("#reset");
+function countReset(){
+    count = 0;
+    textBox.innerHTML=`${count}`
+}
+reset.addEventListener("click",countReset);
+
+
+
+
+    </script>
+</body>
+</html>

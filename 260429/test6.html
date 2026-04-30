@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="user"></p>
+    
+    <button id="scissors">가위</button>
+    <button id="rock">바위</button>
+    <button id="paper">보</button>
+    
+<script>
+const scissors=document.querySelector("#scissors");
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const user = document.querySelector("#user");
+const arr= ["가위","바위","보"];
+function scissorsTe(){
+    const randomArr=arr[Math.floor(Math.random()*3)]
+if(randomArr==="가위"){
+    user.innerHTML=`비겼습니다`
+    }else if(randomArr==="바위"){
+    user.innerHTML=`졌습니다`
+    }else{
+        user.innerHTML=`이겼습니다`
+    }
+}
+scissors.addEventListener("click",scissorsTe);
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button id="btn">버튼</button>
+   <div id="box" style="display: block;">박스</div>
+    <script>
+        const btn=document.querySelector("#btn");
+        const box=document.querySelector("#box");
+        function boxHidden(){
+
+             box.style.display="none"
+        }
+        btn.addEventListener("click",boxHidden);
+    </script>    
+
+
+
+</body>
+</html>

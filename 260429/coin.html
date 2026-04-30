@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="coin">동전던지기</div>
+    <button id ="btn">버튼</button>
+    
+    <script>
+        const coin = document.querySelector("#coin");
+        const btn = document.querySelector("#btn");
+        const arr = ["앞","뒤"];
+        function cointhrow(){
+     const randomArr = arr[Math.floor(Math.random()*2)];
+            coin.innerHTML=`${randomArr}`;
+
+        }
+        btn.addEventListener("click",cointhrow);
+        
+    </script>
+</body>
+</html>

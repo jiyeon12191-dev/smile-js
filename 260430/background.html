@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <p id = "change">배경</p>
+    
+    <script>
+        const btn = document.querySelector("#btn");
+        const change = document.querySelector("#change");
+        function backChange(){
+            change.style.backgroundColor="blueviolet";
+        }
+    btn.addEventListener("click",backChange);
+
+    </script>
+</body>
+</html>

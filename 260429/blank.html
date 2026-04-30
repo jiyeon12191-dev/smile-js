@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button id="btn">버튼</button>
+        <input type="text" id="name">
+        <input type="text" id="name1">
+        <p id="view"></p>
+    <script>
+        const btn=document.querySelector("#btn");
+        const blank=document.querySelector("#blank");
+        const view = document.querySelector("#view");
+        function blankSpace(){
+            if(name.value == ""){
+                alert("이름을입력하세요")
+            }else if(name1.value == ""){
+                alert("주소를 입력하세요")
+            }
+          
+        }
+        btn.addEventListener("click",blankSpace);
+    </script>
+    
+</body>
+</html>

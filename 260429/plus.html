@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="user">사용자</p>
+    <button id="btn">버튼</button>
+    <input type="text" id="num">
+    <input type="text" id="num1">
+    
+    <script>
+        const btn = document.querySelector("#btn");
+        const num = document.querySelector("#num");
+        const num1 = document.querySelector("#num1");
+        const user = document.querySelector("#user");
+        let sum = 0;
+        function numPlus(){
+           sum= Number(num.value) + Number(num1.value);
+           user.innerHTML=`${sum}`
+            }
+            btn.addEventListener("click",numPlus);
+    </script>
+    
+</body>
+</html>

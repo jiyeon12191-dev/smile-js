@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id ="hi">안녕하세요</h1>
+   
+    <button id="btn" onclick="boxToggle()">버튼</button>
+     <img id="img1" src="/키티.jpg" style="display: block;">
+     <div id="box" style="display:block;">박스</div>
+     <div class="box2">박스2
+     </div>
+
+<script>
+ function changeText(){
+    alert("안녕")
+     document.title = "안녕"
+      hi.textContent = "안녕";
+      change("blue");
+    }
+function change(color){
+    document.querySelector("#btn").style.color = "blue";
+    document.querySelector("#btn").style.backgroundColor = "pink";
+    }
+
+
+    let fontSize = 12;
+function text_size(){
+    const size = document.querySelector("#btn")
+     btn.style.fontSize="20px";
+    fontSize--;
+    btn.style.fontSize=fontSize + 'px'
+
+}    
+
+const img1 = document.querySelector("#img1")
+function img(){
+    img1.src="/강아지.jpg"
+}
+function img_display(){
+    img1.style.display="none";
+
+}
+function img_view(){
+    img1.style.display="block"
+}
+function img_toggle(){
+    if (img1.style.display =="block"){
+        img1.style.display="none";
+    } 
+    else {
+        img1.style.display="block";
+    }
+}
+const box = document.querySelector("#box")
+function box1(){
+    box.style.display="none";
+}
+function box2(){
+    box.style.display="block";
+}
+function boxToggle(){
+   if (box.style.display=="none"){
+     box.style.display="block";
+   }else {
+    box.style.display="none";
+   }
+
+}
+
+
+
+    
+</script>    
+</body>
+</html>

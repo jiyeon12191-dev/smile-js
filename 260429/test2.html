@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="">버튼</button>
+    <div id="boxid" class="box" style="background-color: black;">박스</div>
+    <img id="img" src="/강아지.jpg" style="display: block;">
+    <div id="date">현재시간</div>
+
+    <script>
+    const btn=document.querySelector("#btn")
+    const box=document.querySelector("#boxid")
+    function box1(){
+        
+        boxid.classList.add("내용")
+    }    
+    function box2(){
+        boxid.classList.remove("box")
+    }
+    function box3(){
+        boxid.classList.toggle("발표")
+    }
+    function darkmode(){
+       
+        if (boxid.style.backgroundColor=="black"){
+            boxid.style.backgroundColor="white"
+        }else{
+            boxid.style.backgroundColor="black"
+        }
+    }
+    const img=document.querySelector("#img")
+    function img1(){
+        img.style.display="none"
+
+    }
+
+    const today = new Date()
+    
+    const date = document.querySelector("#date")
+    const year = today.getFullYear();
+    const month = today.getMonth()+1;
+    const dates = today.getDate();
+    const hours =today.getHours();
+    const minutes = today.getMinutes();
+    function dateShow(){
+      date.innerHTML= year + "-" + month + "-" + dates + "\n" + hours + ":" + minutes 
+
+        
+
+    }
+    btn.addEventListener("click",dateShow())
+    
+
+    function random(){
+       
+     const random = Math.floor(Math.random()*100);
+        date.innerHTML = Math.random();
+
+    }
+    btn.addEventListener("click",random())
+
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <p id="classRe" class="내용">클래스 제거</p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const classRe = document.querySelector("#classRe");
+         function remove(){
+           
+             classRe.classList.remove("내용");
+         }
+         btn.addEventListener("click",remove);
+        
+        function class_toggle(){
+            classRe.classList.toggle("내용");
+        }
+        btn.addEventListener("click",class_toggle);
+
+    </script>
+
+
+
+</body>
+</html>
