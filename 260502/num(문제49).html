@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>짝수,홀수 판별</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="numInput">
+    <p id="eoResult"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const numInput = document.querySelector("#numInput");
+        const eoResult = document.querySelector("#eoResult");
+        function isEvenOdd(){
+            const num = parseFloat(numInput.value);
+            if(isNaN(num)){
+                eoResult.innerHTML=`숫자를 입력해주세요`;
+            }
+            else if(num%2==0){
+                eoResult.innerHTML=`짝수입니다`;
+            }else{
+                eoResult.innerHTML=`홀수입니다`;
+            }
+        }
+           
+        btn.addEventListener("click",isEvenOdd);
+    </script>
+    
+</body>
+</html>

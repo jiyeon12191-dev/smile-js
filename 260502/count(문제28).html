@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트 증가</title>
+</head>
+<body>
+    <p id="view">뷰</p>
+    
+    <button type="button" id="up">버튼</button>
+    <button type="button" id="down">버튼1</button>
+    <button type="button" id="reset">버튼2</button>
+   
+    <script>
+        const up = document.querySelector("#up");
+        const view = document.querySelector("#view");
+        let count = 0;
+        function countUp(){
+            count ++;
+            view.innerHTML=`${count}`;
+        }
+        up.addEventListener("click",countUp);
+        
+        const down = document.querySelector("#down");
+        function countDown(){
+            count --;
+            view.innerHTML=`${count}`;
+        }
+        down.addEventListener("click",countDown);
+
+        const reset = document.querySelector("#reset");
+        function countReset(){
+            count=0;
+            view.innerHTML=`${count}`;
+        }
+        reset.addEventListener("click",countReset);
+
+        
+    </script>
+</body>
+</html>

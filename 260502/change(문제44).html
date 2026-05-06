@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>섭씨를 화씨로 변환</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="celsius">
+    <p id="result"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const celsius = document.querySelector("#celsius");
+        const result = document.querySelector("#result");
+        function convert(){
+            const cNum = parseFloat(celsius.value); // 입력창에 적힌 문자열섭씨값을 실수로 변환 변환
+            // 변수에 담기 
+            if(!isNaN(cNum)){ // 변수이름으로 숫자인지 아닌지 검사 
+                const fResult =(cNum * 9 / 5) + 32; // 화씨결과는 섭씨숫자에 공식을 적용한 값
+                result.innerHTML="화씨" + fResult.toFixed(1)+ "도 입니다";  // 소수점 첫째 자리까지 반올림한 온도 
+            }else{
+                result.innerHTML=`온도를 입력해주세요`;
+            }
+        }
+        
+        btn.addEventListener("click",convert);
+    </script>
+</body>
+</html>

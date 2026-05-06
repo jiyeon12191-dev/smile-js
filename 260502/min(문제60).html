@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최저점 찾기</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="nMin"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const nMin = document.querySelector("#nMin");
+        let nArr = [50,30,10];
+        function mathMin(){
+            let min = nArr[0]; 
+            for(let i=0; i<nArr.length; i++){
+              if(nArr[i]<min){
+                min=nArr[i];
+                }
+            }    
+            nMin.innerHTML=`${min}`;
+        }
+        btn.addEventListener("click",mathMin);
+
+    </script>
+</body>
+</html>

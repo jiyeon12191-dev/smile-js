@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 인사하기</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="intro"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const intro = document.querySelector("#intro");
+        function sayHello(){
+            const name = "철수";
+            intro.innerHTML = `${name} 님! 안녕하세요`;
+        }
+        btn.addEventListener("click",sayHello);
+    </script>
+</body>
+</html>

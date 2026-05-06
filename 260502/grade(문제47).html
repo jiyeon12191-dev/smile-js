@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적 등급 출력</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="gradeInput">
+    <p id="gResult"></p>
+    
+    <script>
+        const btn = document.querySelector("#btn");
+        const gradeInput = document.querySelector("#gradeInput");
+        const gResult = document.querySelector("#gResult");
+        function userGrade(){
+            const grade = parseFloat(gradeInput.value);
+            if(isNaN(grade)){
+                gResult.innerHTML=`숫자를 입력해주세요`;
+            }
+            else if(grade>=60){
+                gResult.innerHTML= `A등급입니다`
+            }else if(!isNaN(grade)&& grade<60){
+                gResult.innerHTML=`B등급입니다`;
+            }
+        }
+        btn.addEventListener("click",userGrade);
+
+
+    </script>
+    
+</body>
+</html>

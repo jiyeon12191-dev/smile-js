@@ -1,0 +1,28 @@
+// 이미지 토글(보이기,숨기기 기능을 함께 할수있음)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <img id = "img" src="/260430/강아지.jpg" >
+    <script>
+        const btn = document.querySelector("#btn");
+        const img = document.querySelector("#img");
+        function img_Toggle(){
+            if(img.style.display=="block"){
+                img.style.display="none"
+            }else{
+                img.style.display="block";
+            }
+        }
+        
+        btn.addEventListener("click",img_Toggle);
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+// 글자색 변경
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <p id ="color">텍스트</p>
+<script>
+    const btn=document.querySelector("#btn");
+    const color=document.querySelector("#color");
+    function textColor(){
+        color.style.color="blue";
+    }
+    btn.addEventListener("click",textColor);
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빈칸검사</title>
+</head>
+<body>
+    
+        <button type="button" id="btn">버튼</button>
+        <input type="text" id="name">
+        <p id="view"></p>
+        
+    <script>
+        const btn = document.querySelector("#btn");
+        const name = document.querySelector("#name");
+        const view = document.querySelector("#view");
+        function isEmpty(text){
+            if(name.value==""){
+                view.innerHTML=`이름을 입력해주세요`;
+            }else{
+                view.innerHTML=`이름이 입력되었습니다`;
+            }
+        }
+        btn.addEventListener("click",isEmpty);
+    </script>
+</body>
+</html>

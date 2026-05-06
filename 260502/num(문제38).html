@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자인지 검사</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="text" id="num">
+    <p id="view"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const num = document.querySelector("#num");
+        const view = document.querySelector("#view");
+        function numCheck(){
+            if(!isNaN(num.value)){
+                view.innerHTML = `숫자가맞습니다`;
+            }else{
+                view.innerHTML = `숫자가 아닙니다`;
+            }
+        }
+        btn.addEventListener("click",numCheck);
+
+    </script>
+</body>
+</html>

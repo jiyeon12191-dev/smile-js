@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할 일 추가 </title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="text" id="userInput">
+    <ul id="list"></ul>  
+    <script>
+        const btn = document.querySelector("#btn");
+        const userInput = document.querySelector("#userInput");
+        const list = document.querySelector("#list");
+        function addList(){ // 할 일 추가 
+            let value = userInput.value;
+            if(value==""){
+            alert("할일을 입력해주세요");
+            }else{
+                let li = document.createElement("li");
+                li.innerText = value + " "; //추가될 글자사이의 간격이 생김
+                li.style.textDecoration = "none"; // 선이 없다는걸 정의함
+        
+                let endbtn = document.createElement("button"); // 새로운 버튼 추가 
+                endbtn.innerHTML=`완료`;
+      
+                function end(){ // 할 일 완료 처리 
+                    if(li.style.textDecoration==="none" || li.style.textDecoration===""){
+                        li.style.textDecoration="line-through";
+                    }else{
+                        li.style.textDecoration="none";
+                    }
+                }
+                endbtn.addEventListener("click",end);
+                li.append(endbtn);
+                list.append(li);
+                userInput.value="";
+            }
+        }
+    
+        btn.addEventListener("click",addList);
+        
+
+
+    </script>
+</body>
+</html>

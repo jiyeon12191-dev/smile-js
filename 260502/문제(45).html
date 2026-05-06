@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원화계산</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="usdInput">
+    <p id="result"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const usdInput = document.querySelector("#usdInput"); //입력창
+        const result = document.querySelector("#result"); //결과
+        const exchangerate = 1350.5; // 환율
+        function coin(){
+        const usdValue = parseFloat(usdInput.value);
+        if(!isNaN(usdValue)){
+            const krwResult = usdValue*exchangerate; // 원화계산 = 달러 * 환율
+        result.innerHTML=`${krwResult.toLocaleString()}원`;
+        }else{
+            result.innerHTML=`숫자를 입력해주세요`;
+        }
+    }
+    btn.addEventListener("click",coin);
+    </script>
+</body>
+</html>

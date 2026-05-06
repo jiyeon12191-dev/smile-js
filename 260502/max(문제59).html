@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최고점 찾기</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="num"></p>
+    <script>
+        let arr = [20,10,50];
+        let max = 0;
+        const btn = document.querySelector("#btn");
+        const num = document.querySelector("#num");
+        function mathMax(){
+            for(let i=0; i<arr.length; i++){
+               if(arr[i]>max) {
+               max=arr[i];
+            }
+        } 
+        num.innerHTML=`${max}`;
+        }
+        btn.addEventListener("click",mathMax);
+    </script>
+</body>
+</html>
