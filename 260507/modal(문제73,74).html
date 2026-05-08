@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달 열기,닫기</title>
+    <style>
+   #view {
+        display: none; /* 기본적으로 화면에서 지웁니다 */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 화면 정중앙 배치 */
+        padding: 30px;
+        background-color: white;
+        border: 2px solid #333;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+
+    /* 2. UI 제어: 활성화 상태 (보임) */
+    /* JS가 클래스 리스트에 'show'를 추가하는 순간 이 스타일이 적용됩니다 */
+    #view.show {
+        display: block;
+    }
+    #view ul { list-style: none; padding: 0; margin-bottom: 20px; }
+    #view a { color: blue; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <button type="button" id="open">여는 버튼</button>
+    <div id="view">
+        <button type="button" id="close">닫는 버튼</button>
+    </div>
+    <div id="bg"></div>
+    <script>
+        const open = document.querySelector("#open");
+        const close = document.querySelector("#close");
+        const view = document.querySelector("#view");
+        function openview(){
+            view.style.display="block";
+        }
+        function closeview(){
+            view.style.display="none";
+        }
+        open.addEventListener("click",openview);
+        close.addEventListener("click",closeview);
+    </script>
+</body>
+</html>

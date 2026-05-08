@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 음식 추천</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="food"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const food = document.querySelector("#food");
+        let farr = ["떡볶이","칼국수","우동","족발","삼겹살"];
+        function foodRa(){
+            const index = Math.floor(Math.random()*farr.length);
+            food.innerHTML=`${farr[index]}`;
+        }
+        btn.addEventListener("click",foodRa);
+    </script>
+</body>
+</html>

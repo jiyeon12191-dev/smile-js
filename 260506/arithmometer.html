@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button type="button" id="btn">버튼</button>
+   <script>
+    const btn = document.querySelector("#btn");
+    function App(){
+        const calculator = {
+            plus:function(a,b){
+                console.log(a+b);
+            },
+            minus:function(a,b){
+                console.log(a-b);
+            },
+            multi:function(a,b){
+                console.log(a*b);
+            },
+            divide:function(a,b){
+                console.log(a/b);
+            },
+        };
+    
+    calculator.plus(1,2);
+    calculator.minus(5,3);
+    calculator.multi(6,2);
+    calculator.divide(20,3);
+    }
+    App();
+   </script>
+</body>
+</html>

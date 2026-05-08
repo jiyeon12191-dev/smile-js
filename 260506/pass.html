@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합격 불합격 출력</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="user">
+    <p id="view"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const user = document.querySelector("#user");
+        const view = document.querySelector("#view");
+        function passFail(){
+            const score = user.value;
+            if(score>=95){
+                view.innerHTML = `합격입니다`;
+            }else if(score<=95){
+                view.innerHTML = `불합격입니다`;
+            }
+        }
+        btn.addEventListener("click",passFail);
+        
+    </script>
+</body>
+</html>

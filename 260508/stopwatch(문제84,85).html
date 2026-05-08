@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="view">00:00</div>
+    <button type="button" id="startBtn">start</button>
+    <button type="button" id="stopBtn">stop</button>
+    
+    <script>
+        const startBtn = document.querySelector("#startBtn");
+        const stopBtn = document.querySelector("#stopBtn")
+        const view = document.querySelector("#view");
+        
+        let time=0;
+        let interval=null;
+        function display(){
+            time++;
+
+            // 전체 time을 가지고 분,초 0.01초 계산 
+            let min = Math.trunc(time / 6000); // 소수점을 다 버리고 정수만 남긴다(Math.trunc)
+            let sec = Math.trunc((time % 6000) / 100);
+            let msec = time % 100; //0.01초 단위 
+
+
+            view.textContent=("0" + Math.trunc(time/60)).slice(-2)+
+            ":" + ("0" + (time % 60)).slice(-2);
+           
+        }
+        function startwatch(){
+            if(interval)return;
+            
+            interval = setInterval(display,10); // 1초에서 0.01초로 시작됨
+            startBtn.disabled = true;
+            startBtn.disabled = false;
+        }
+        function stopwatch(){
+            clearInterval(interval);
+            interval = null;
+           
+            startBtn.disabled = false;
+            startBtn.disabled = true;
+        }
+        
+        startBtn.addEventListener("click",startwatch);
+        stopBtn.addEventListener("click",stopwatch);
+    </script>
+</body>
+</html>

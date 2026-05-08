@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할일 추가</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="text" id="todoInput">
+    <ul id="todo"></ul>
+    <script>
+        const btn = document.querySelector("#btn");
+        const todoInput = document.querySelector("#todoInput");
+        const todo = document.querySelector("#todo");
+        let arr = [];   
+        function todoAdd(){
+            let value = todoInput.value;
+            if(value===""){
+                alert("할일을 입력하세요")
+            }else{
+                arr.push(value);
+                let li = document.createElement("li");
+                li.innerHTML = value + " ";
+                li.style.textDecoration="none";
+            
+            let endBtn = document.createElement("button");
+            endBtn.innerHTML = `완료`;
+            function end(){
+                if(li.style.textDecoration==="none" || li.style.textDecoration===""){
+                    li.style.textDecoration="line-through"; 
+                }else{
+                    li.style.textDecoration==="none";
+                }
+            }
+        
+                endBtn.addEventListener("click",end);
+                li.append(endBtn);
+                todo.append(li);
+                todoInput.value="";
+        }
+    }
+        btn.addEventListener("click",todoAdd);
+    </script>
+</body>
+</html>

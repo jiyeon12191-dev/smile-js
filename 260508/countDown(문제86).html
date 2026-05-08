@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트 시작</title>
+</head>
+<body>
+    <button type="button" id="btn">시작</button>
+    <div id="view"></div>
+    <script>
+        const btn = document.querySelector("#btn");
+        const view = document.querySelector("#view");
+        let time=30;
+        let timer;
+        function countDown(){
+           time--;
+            if(time<=0){
+            view.innerHTML=`카운트 다운이 끝났습니다`
+            clearInterval(timer);
+            return;
+           }
+           view.innerHTML=`${time}`;
+            }
+             timer = setInterval(countDown,1000);
+        btn.addEventListener("click",countDown);
+    </script>
+</body>
+</html>

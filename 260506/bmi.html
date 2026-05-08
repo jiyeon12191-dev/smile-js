@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI계산</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="height">
+    <input type="number" id="weight">
+    <p id="view"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const height = document.querySelector("#height");
+        const weight = document.querySelector("#weight");
+        const view = document.querySelector("#view");
+        function bmi(){
+            // if(isNaN(weight)&&isNaN(height)){
+            //     view.innerHTML = `숫자를 입력하세요`
+            //     return;
+            // }else{
+            const result = Number(weight.value)/(Number(height.value)/100*Number(height.value)/100);
+            view.innerHTML=`${result.toFixed(1)}`;
+            }
+        
+        btn.addEventListener("click",bmi);
+    </script>
+</body>
+</html>

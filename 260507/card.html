@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+    <button type="button" id="btn">버튼</button>
+    <script>
+        const btn = document.querySelector("#btn");
+        const main = document.querySelector("#main");
+        function cardAdd(){
+            const newcard = document.createElement("div");
+            newcard.innerHTML = `새카드`;
+            newcard.style.background="white";
+          
+            const btn1 = document.createElement("button");
+            btn1.innerHTML = `카드변경`;
+            
+            function change(){
+            newcard.style.background="skyblue";
+            }
+            btn1.addEventListener("click",change);
+        
+        main.append(newcard,btn1);
+    }
+        
+        btn.addEventListener("click",cardAdd);
+
+    </script>
+</body>
+</html>

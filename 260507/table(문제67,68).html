@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 행 추가</title>
+</head>
+<body>
+    <button type="button" id="btn">추가버튼</button>
+    <button type="button" id="btn1">삭제버튼</button>
+    <table id="fruits">
+       
+    </table>
+    <script>
+        const btn = document.querySelector("#btn");
+        const btn1 = document.querySelector("#btn1");
+        const fruits = document.querySelector("#fruits");
+        function addTable(){
+           let newRow = fruits.insertRow(-1);
+           let cell = newRow.insertCell(0);
+           let cell1 = newRow.insertCell(1);
+           cell.innerText = `포도`;
+        }
+        btn.addEventListener("click",addTable);
+        function delTable(){
+            if(fruits.rows.length>0){
+                fruits.deleteRow(-1);
+            }
+            alert("행이 삭제됬습니다");
+        }
+    btn1.addEventListener("click",delTable);
+    </script>
+</body>
+</html>

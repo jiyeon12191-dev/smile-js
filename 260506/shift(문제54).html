@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 첫번째 삭제</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="view"></p>
+   <script>
+    const btn = document.querySelector("#btn");
+    const view = document.querySelector("#view");
+    let arr=["사과","바나나","체리"]
+    function shift(){
+        let result="";
+         arr.shift();
+        for(let i=0; i<arr.length; i++){
+            result += arr[i] + " ";
+            view.innerHTML=`[${result}]`;
+        }
+
+    }
+    btn.addEventListener("click",shift);
+   </script> 
+</body>
+</html>

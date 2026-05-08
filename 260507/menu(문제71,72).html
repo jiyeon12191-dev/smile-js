@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 열기,닫기</title>
+</head>
+<body>
+    <button type="button" id="openBtn">열기버튼</button>
+    <button type="button" id="closeBtn">닫기버튼</button>
+    <nav id="menu" style="display: none;">
+        <ul>
+            <li><a href="/"></a>홈</li>
+            <li><a href="/"></a>게시글</li>
+        </ul>    
+    </nav>
+    <script>
+        const openBtn = document.querySelector("#openBtn");
+        const closeBtn = document.querySelector("#closeBtn");
+        const menu = document.querySelector("#menu");
+        function openMenu(){
+          menu.style.display="block";
+        
+        }
+        function closeMenu(){
+            menu.style.display="none";
+
+        }
+        openBtn.addEventListener("click",openMenu);
+        closeBtn.addEventListener("click",closeMenu);
+        
+        
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>섭씨를 화씨로 변환</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="cNum">
+    <p id="view"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const cNum = document.querySelector("#cNum");
+        const view = document.querySelector("#view");
+        function celsius(){
+            const cResult=Number(cNum.value); // 입력값을 숫자로 변환하여 cResult에 저장
+            if(isNaN(celsius.value)){ // 변환한 값을 숫자인지 아닌지를 구분 
+                const fResult = (cResult*9/5)+32;
+                view.innerHTML = `화씨 ${fResult.toFixed(1)}`;
+            }
+        }
+
+        btn.addEventListener("click",celsius);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 시작</title>
+</head>
+<body>
+    <button type="button" id="btn">시작버튼</button>
+    <button type="button" id="btn1">종료버튼</button>
+    <button type="button" id="btn2">3초뒤 실행버튼</button>
+    <div id="result"></div>
+    
+    <script>
+        const btn = document.querySelector("#btn");
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+        const result = document.querySelector("#result");
+        let timer=null;   // 상태 표시(타이머가 돌아가고 있는지 확인 ) 
+        function viewTimer(){
+            result.innerHTML=new Date().toLocaleTimeString(); // 현재시간을 읽기 쉬운 시간형식으로 보여줌
+        }
+        function startTimer(){
+            // 시간이 돌아가고 있다면 중복 방지 제거 
+            if(timer!=null){
+                clearInterval(timer); // 시간이 돌아가고 있다면 끄고 새로 시작 
+            }
+            viewTimer();
+           timer  = setInterval(viewTimer,1000);
+        }
+        function stoptimer(){
+            clearInterval(timer);
+            timer=null;
+        }
+        function secondTimer(){
+            clearInterval(timer);
+            clearTimeout(timer);
+            
+            result.innerHTML = `3초뒤에 실행해 `
+            
+            timer = setTimeout(()=>{
+                viewTimer();
+                timer = setInterval(viewTimer,1000);
+            },3000);
+        }
+    
+    
+        btn.addEventListener("click",startTimer);
+        btn1.addEventListener("click",stoptimer);
+        btn2.addEventListener("click",secondTimer);
+        
+    </script>
+</body>
+</html>

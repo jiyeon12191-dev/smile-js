@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양수,음수 판별</title>
+</head>
+<body>
+   <button type="button" id="btn">버튼</button> 
+   <input type="number" id="num">
+   <p id="view"></p>
+   <script>
+    const btn = document.querySelector("#btn");
+    const num = document.querySelector("#num");
+    const view = document.querySelector("#view");
+    
+    function plus(){
+       
+        if(Number(num.value)>0){
+            view.innerHTML=`양수입니다`;
+        }else if(num.value<0){
+            view.innerHTML=`음수입니다`;
+        }
+    }
+    btn.addEventListener("click",plus);
+
+
+   </script>
+</body>
+</html>

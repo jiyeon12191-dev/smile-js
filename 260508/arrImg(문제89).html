@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 이미지</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <img id="img" src="/260430/키티.jpg">
+    <script>
+        const btn = document.querySelector("#btn");
+        const img = document.querySelector("#img");
+        let arr = ["/260430/강아지.jpg","/260430/키티.jpg"];
+        function imgRa(){
+            const index = Math.floor(Math.random()*arr.length);
+            img.src=`${arr[index]}`;
+        }
+        btn.addEventListener("click",imgRa);
+    </script>
+</body>
+</html>

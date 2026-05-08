@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 추가,색상변경</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <div id="container"></div>
+    <script>
+        const btn = document.querySelector("#btn");
+        const container = document.querySelector("#container");
+        function cardAdd(){
+            const newcard = document.createElement("div");
+            newcard.innerHTML=`새카드`;
+            newcard.style.background="green";
+            
+            const changeBtn = document.createElement("button");
+            changeBtn.textContent="색상변경";
+            changeBtn.addEventListener("click",()=>newcard.style.background="skyblue");
+            container.append(newcard, changeBtn);
+        }
+       
+        btn.addEventListener("click",cardAdd);
+
+    </script>
+</body>
+</html>

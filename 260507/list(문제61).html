@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트 항목 추가</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="text" id="userInput">
+    <ul id="list"></ul>
+    <script>
+        const btn = document.querySelector("#btn");
+        const userInput = document.querySelector("#userInput");
+        const list = document.querySelector("#list");
+        let arr = [];
+        function listAdd(){
+            let value = userInput.value;
+            if(value===""){
+                alert("내용을 입력하세요");
+            }else{
+                arr.push(value);
+                let li = document.createElement("li");
+                li.innerHTML=value;
+                list.append(li);
+            }
+        }
+        btn.addEventListener("click",listAdd);
+    </script>
+</body>
+</html>

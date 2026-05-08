@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 정답 확인</title>
+</head>
+<body>
+    <p id="quiz"></p>
+    <button type="button" id="btn">정답버튼</button>
+    <button type="button" id="btn1">다음버튼</button>
+    <input type="text" id="inpt">
+    <div id="view"></div>
+    <script>
+        const btn = document.querySelector("#btn");
+        const btn1 = document.querySelector("#btn1");
+        const inpt = document.querySelector("#inpt");
+        const view = document.querySelector("#view");
+        const quiz = document.querySelector("#quiz");
+        let count =0;
+        
+        let index = 0;
+        let quizArr = [
+            {Question: "1더하기1은?", Correct: 2},
+            {Question: "2더하기3은?", Correct: 5},
+            {Question: "4더하기2은?", Correct: 6},
+            {Question: "7더하기3은?", Correct: 10}
+        ]
+
+        function quizShow(){
+            quiz.innerHTML=`${quizArr[index].Question}`;
+        }
+
+        quizShow(); 
+
+        function quclok(){
+            if(Number(inpt.value)===quizArr[index].Correct){
+                count ++;
+                view.innerHTML=`정답입니다. 점수:${count}`;
+            }else{
+                view.innerHTML=`정답이 아닙니다`;
+            }
+        }
+        btn.addEventListener("click",quclok);
+
+        function nequiz(){
+            index++;
+             quizShow(); 
+            quclok();
+            }
+        
+        
+        btn1.addEventListener("click",nequiz);
+    </script>
+</body>
+</html>
