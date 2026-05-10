@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 정렬</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="arrview"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const arrview = document.querySelector("#arrview");
+        let arr=["참외","복숭아","자두"];
+        
+        // function arrSort(){
+        //     arr.sort();
+        //     arrview.innerHTML=`${arr}`;
+        // }
+        // btn.addEventListener("click",arrSort);
+        function arrReverse(){
+            arr.reverse();
+            arrview.innerHTML=`${arr}`;
+        }
+        btn.addEventListener("click",arrReverse);
+    </script>
+</body>
+</html>

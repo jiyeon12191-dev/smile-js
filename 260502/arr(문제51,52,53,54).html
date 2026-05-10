@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 목록 출력</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="arrResult"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const arrResult = document.querySelector("#arrResult");
+        let arr=["바나나","사과","포도"];
+        function arrList(){ // 배열 목록 출력
+            arrResult.innerHTML=`${arr}`;
+        }
+         btn.addEventListener("click",arrList);
+        //  function arrPush(){ 추가
+        //     arr.push("배");
+        //     arrResult.innerHTML=`${arr}`;
+        //  }
+        //   btn.addEventListener("click",arrPush);
+        // function arrPop(){ // 마지막 삭제
+        //     arr.pop();
+        //     arrResult.innerHTML=`${arr}`;
+        // }
+        // btn.addEventListener("click",arrPop);
+        function arrShift(){ // 첫번째 삭제
+            arr.shift();
+            arrResult.innerHTML=`${arr}`
+        }
+        btn.addEventListener("click",arrShift);
+    </script>
+</body>
+</html>

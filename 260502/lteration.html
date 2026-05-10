@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 목록 출력</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="student"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const student = document.querySelector("#student");
+        let arr=["철수","영희","맹구"];
+        let result="";
+        function repeatText(){
+            for(let i=0; i<arr.length; i++){
+                result+=arr[i]+ " ";
+            }
+            student.innerHTML=result;
+        }
+        btn.addEventListener("click",repeatText);
+
+
+    </script>
+</body>
+</html>

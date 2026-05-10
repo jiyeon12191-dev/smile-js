@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>점수 평균계산</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="tot"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const tot = document.querySelector("#tot");
+        let score = [20,30,50,60];
+        function averageArray(arr){
+            let sctot=0;
+            for(let i=0; i<score.length; i++){
+            sctot+=score[i];
+            }
+            const avg=sctot/score.length;
+            tot.innerHTML=`${avg}`;
+        }
+        btn.addEventListener("click",averageArray);
+    </script>
+</body>
+</html>

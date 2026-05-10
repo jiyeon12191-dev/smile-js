@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="text" id="hello">
+    <p id="view"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const hello = document.querySelector("#hello");
+        const view = document.querySelector("#view");
+        function value(){
+            const data = hello.value; // 변수에 값을 저장해서 값을 가져오기
+            view.innerHTML=`${data}`; // 변수에 저장한 값을 출력 
+            hello.value=""; // 입력창 비우기
+        }
+            btn.addEventListener("click",value);
+
+    </script>
+</body>
+</html>

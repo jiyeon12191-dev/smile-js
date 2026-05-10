@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">사용자</p>
+    <button type="button" id="sci">가위</button>
+    <button type="button" id="rk">바위</button>
+    <button type="button" id="pap">보</button>
+    
+    <script>
+        const sci = document.querySelector("#sci");
+        const text=document.querySelector("#text");
+        const arr=["가위","바위","보"];
+        function scissors(){
+            const arrLi = arr[Math.floor(Math.random()*3)];
+            if(arrLi==="가위"){
+                text.innerHTML=`비겼습니다`;
+            }else if(arrLi==="바위"){
+                text.innerHTML=`졌습니다`;
+            }else{
+                text.innerHTML=`이겼습니다`;
+            }
+        }
+        sci.addEventListener("click",scissors);
+        
+        const rk = document.querySelector("#rk") 
+        function rock(){
+            const arrLi = arr[Math.floor(Math.random()*3)]
+            if(arrLi === "바위"){
+                text.innerHTML=`비겼습니다`;
+            }else if(arrLi === "보"){
+                text.innerHTML=`졌습니다`; 
+            }else{
+                text.innerHTML=`이겼습니다`;
+            }
+        }
+        rk.addEventListener("click",rock);
+
+        const pap = document.querySelector("#pap");
+        function paper(){
+            const arrLi = arr[Math.floor(Math.random()*3)];
+            if(arrLi === "보"){
+                text.innerHTML=`비겼습니다`;
+            }else if(arrLi === "가위"){
+                text.innerHTML=`졌습니다`;
+            }else{
+                text.innerHTML=`이겼습니다`;
+        }
+    }
+         pap.addEventListener("click",paper);
+
+    
+    </script>
+    
+</body>
+</html>

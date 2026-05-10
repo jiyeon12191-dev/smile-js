@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 할일 삭제 </title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <ul id="list">
+        <li>학생</li>
+        <li>선생님</li>
+
+    </ul>
+    <script>
+        const btn = document.querySelector("#btn");
+        const list = document.querySelector("#list");
+        function allDelete(){
+            let alLi = document.querySelectorAll("li");
+            for(let li of alLi ){
+                li.remove();
+            }
+            alert("전체 항목이 삭제 됬습니다");
+            }
+        
+        btn.addEventListener("click",allDelete);
+
+        
+
+    </script>
+</body>
+</html>

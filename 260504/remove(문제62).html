@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트 항목 삭제</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="text" id="userInput">
+    <ul id="list">
+        <li>고구마</li>
+        <li>감자</li>
+    </ul>
+    <script>
+        const btn = document.querySelector("#btn");
+        const userInput = document.querySelector("#userInput");
+        const list = document.querySelector("#list");    
+        function listremove(){
+            let value = userInput.value;
+            if(value==""){
+                alert("삭제할 내용을 입력하세요");
+            }else{
+                let allList = document.querySelectorAll("li"); // li를 다 가져오기 
+            for(let li of allList){
+                if(li.innerText===value){
+                    li.remove();
+                    break ;
+                    }
+                }
+            }          
+        }
+        btn.addEventListener("click",listremove);
+    </script>
+</body>
+</html>

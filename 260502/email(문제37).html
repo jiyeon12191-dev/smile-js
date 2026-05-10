@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일 형식 검사</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="text" id="email">
+    <p id="check"></p>
+   
+    <script>
+        const btn = document.querySelector("#btn");
+        const email = document.querySelector("#email");
+        const check = document.querySelector("#check");
+        
+        function validateEmail(){
+            if(!email.value.includes("@")){
+                check.innerHTML=`이메일을 제대로 입력해주세요`;
+            }else{
+                check.innerHTML=`이메일이 맞습니다`;
+            }
+        }
+        btn.addEventListener("click",validateEmail);
+
+    </script>
+</body>
+</html>

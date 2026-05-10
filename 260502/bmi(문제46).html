@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMi계산</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <input type="number" id="weightInput">
+    <input type="number" id="heightInput">
+    <p id="bResult"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const weightInput = document.querySelector("#weightInput");
+        const heightInput = document.querySelector("#heightInput");
+        const bResult = document.querySelector("#bResult");
+        function bmi(){
+            const weight = parseFloat(weightInput.value);
+            const height = parseFloat(heightInput.value);
+            if(!isNaN(weight)&&!isNaN(height)){
+            const bmiRe = weight /((height/100) * (height/100)); //몸무게 / 키/100*키/100
+            bResult.innerHTML=`당신의 BMI는 ${bmiRe.toFixed(1)} 입니다`;
+            }else{
+                bResult.innerHTML=`키와 몸무게를 입력해주세요`;
+            }
+        }
+        btn.addEventListener("click",bmi)
+
+
+    </script>
+</body>
+</html>
