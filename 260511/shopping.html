@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div id="userDisplay"></div>
+    <div id="shApi"></div>
+    <script>
+        const display = document.querySelector("#userDisplay");
+        const shApi = document.querySelector("#shApi");
+
+        let user = {name:"김철수",point:300};
+        localStorage.setItem("user",JSON.stringify(user));
+        const save = JSON.parse(localStorage.getItem("user"));
+        display.innerHTML=`
+            <p>이름 ${save.name}</p>
+            <p>보유포인트 ${save.point}</p>`
+            const koreanNames ={
+                        "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops":"피엘라벤 백팩",
+                        "Mens Casual Premium Slim Fit T-Shirts":"티셔츠",
+                        "Mens Cotton Jacket":"면자켓",
+                        "Mens Casual Slim Fit":"남성 캐쥬얼 슬림핏",
+                        "White Gold Plated Princess":"프린세스 골드 반지",
+                        "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED":"삼성 49인치 QLED 모니터"
+            }
+            fetch("https://fakestoreapi.com/products")
+            .then(res => res.json())
+            .then(data => {
+                shApi.innerHTML = data
+                .filter(item => koreanNames[item.title])
+                .map((item) => `
+                    <p>상품명 ${koreanNames[item.title]}</p>
+                    <p>가격 ${Math.round(item.price * 1380).toLocaleString()}원</p>
+                    <img src="${item.image}" class="w-36">
+                `).join("")
+                    })
+                
+    </script>
+</body>
+</html>

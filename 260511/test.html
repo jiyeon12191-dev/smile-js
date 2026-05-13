@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div id="display"></div>
+    <div id="apiResult"></div>
+  <script>
+    const display = document.querySelector("#display");
+    const result = document.querySelector("#apiResult")
+    const user = {name:"민준", age:15}
+    localStorage.setItem("user",JSON.stringify(user))
+    const save = JSON.parse(localStorage.getItem("user"))
+    display.innerHTML=`
+        <p>이름 ${save.name}</p>
+        <p>나이 ${save.age}</p>`
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(res => res.json())
+    .then(data =>{
+        result.innerHTML = data.map((item) =>`
+        <p>이름 ${item.name}</p>
+        <p>이메일 ${item.email}</p>
+        `).join("") 
+    })
+  </script>
+</body>
+</html>

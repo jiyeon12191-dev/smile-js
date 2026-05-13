@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="memoInput" placeholder="메모를 입력하세요">
+<button type="button" id="saveBtn">저장</button>
+<p id="memoDisplay"></p>
+
+<button type="button" id="apiBtn"></button>
+<p id="apiResult"></p>
+
+<script>
+const input = document.querySelector("#memoInput");
+const saveBtn = document.querySelector("#saveBtn");
+const display = document.querySelector("#memoDisplay");
+
+display.innerText = localStorage.getItem("memo") || "";
+
+saveBtn.addEventListener("click",() =>{
+    localStorage.setItem("memo",input.value);
+    display.innerText = input.value;
+});
+
+document.querySelector("#apiBtn").addEventListener("click", () =>{
+    fetch("http://json.placeholder.typicode/todos/1")
+    .then(res => res.json ())
+    .then(data =>{
+        document.querySelector("#apiResult").innerText=data.title;
+    });
+});
+
+</script>
+</body>
+</html>

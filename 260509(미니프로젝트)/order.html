@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>주문 페이지</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col gap-5  items-center">
+    <div class="border border-gray-300 rounded-md h-[350px] p-[30px] flex flex-col gap-5" >
+        <div class="flex flex-col w-[380px] ">
+            <label for="name" class="text-[20px] color">이름</label>
+            <input type="text" id="name" class="border border-gray-300 rounded-md h-[35px]">
+        </div>
+        <div class="flex flex-col  w-[380px] ">
+            <label for="phoneNumber" class="text-[20px]">전화번호</label>
+            <input type="text" id="phoneNumber" class="border border-gray-300 rounded-md h-[35px]">
+        </div>
+        <div class="flex flex-col w-[380px]">
+            <label for="request" class="text-[20px]">요청사항</label>
+            <input type="text" id="request"  class="border border-gray-300 rounded-md h-[80px]">
+        </div>
+    </div>
+    
+    <button type="button" id="orderBtn" class="rounded-md border border-gray-400 w-[450px] h-[50px] font-bold">주문하기</button>
+    <p id="view"></p>
+   
+   
+    <script>
+        const orderBtn = document.querySelector("#orderBtn");
+        const name = document.querySelector("#name");
+        const phoneNumber = document.querySelector("#phoneNumber");
+        const request = document.querySelector("#request");
+        const view = document.querySelector("#view");
+        function order(){
+            const username = name.value;
+            const userPhone = phoneNumber.value;
+            const userRequest = request.value;
+           
+            if(username ==""){
+                view.innerHTML=`이름을 입력해주세요`;
+               return;
+            }
+                
+            if((userPhone.length) < 11){
+                view.innerHTML=`전화번호를 정확하게 입력해주세요` ;
+                return
+            }   
+            
+            if(userRequest==""){
+                view.innerHTML=`요청사항을 입력해주세요`;
+                return;
+            }
+            const orderArr= [
+                {name : username},
+                {phoneNumber:userPhone},
+                {request:userRequest}
+            ];
+        
+             localStorage.setItem("order",JSON.stringify(orderArr));
+            
+            view.innerHTML=`${username}님 주문이 완료되었습니다`;
+            name.value="";
+            phoneNumber.value = "";
+            request.value = "";
+        }
+        function save(){
+            const saved=localStorage.getItem("order");
+            if(saved){
+                const orderData = JSON.parse(saved); //문자열 객체로 변환
+                name.value =orderData[0].name;
+                phoneNumber.value = orderData[1].phoneNumber;
+                request.value = orderData[2].request;
+                
+            }
+        }
+        orderBtn.addEventListener("click",order);
+        save();
+    </script>
+</body>
+</html>

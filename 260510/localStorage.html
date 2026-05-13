@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+let user = {name:"홍길동",age:29};
+localStorage.setItem("user",JSON.stringify(user));
+let saved = JSON.parse(localStorage.getItem("user"));
+console.log(saved.name,saved.age);
+
+function setWithTTL(key,value,ttlMs){
+    const record = {value,expireAt:Date.now() + ttlMs}; // 리코드라는 객체 만듦
+    //value - 실제 저장할 데이터
+    localStorage.setItem(key,JSON.stringify(record));
+}
+function getWithTTL(key){
+    try{
+        const raw = localStorage.getItem(key);
+        if(!raw) return null; // 데이터가 없으면 빈값으로 리턴
+        const {value,expireAt} = JSON.parse(raw); // 글자를 다시 객체로 변환ㄴ 
+        if(Data.now()>expireAt){localStorage.removeItem(key); 
+            return null;
+        }
+            // 현재 시간이 만료 시간 보다 크다 = 유통기한이 지낫다 
+        return value; //유통기한이 안지낫으면  데이터만 빼줌 
+    }catch { 
+        return null;
+    }
+}
+
+    </script>
+</body>
+</html>

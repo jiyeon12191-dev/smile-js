@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="titleInput" placeholder="영화제목을 입력하세요">
+    <button type="button" id="saveBtn">저장</button>
+    <div id = movieDisplay></div>
+
+    <button type="button" id="apiBtn">API 불러오기</button>
+    <p id="apiResult"></p>
+    <script>
+        const input = document.querySelector("#titleInput");
+        const saveBtn = document.querySelector("#saveBtn");
+        const display = document.querySelector("#movieDisplay");
+        const apiBtn = document.querySelector("#apiBtn");
+        const result = document.querySelector("#apiResult")
+       
+        apiBtn.addEventListener("click", (e) => {
+        const keyword = input.value;
+                fetch(`https://api.openweathermap.org/data/2.5/weather`)
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data.Search);
+                            display.innerHTML = data.Search.map((item) => `
+                            <p> ${item.Title}</p>
+                            <img src="${item.Poster}">
+                            
+                            `);   
+                        
+                })
+        })
+       
+    </script>
+</body>
+</html>

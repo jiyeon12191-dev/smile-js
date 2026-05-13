@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="movieDisplay"></div>
+    <input type="text" id="movieInput" placeholder="영화제목을 입력하세요">
+    <button type="button" id="apiBtn" >API불러오기</button>
+    <p id="apiResult"></p>
+
+    <script>
+        const input = document.querySelector("#movieInput");
+        const apiBtn = document.querySelector("#apiBtn");
+        const result = document.querySelector("#apiResult");
+        const display = document.querySelector("#movieDisplay");
+
+        apiBtn.addEventListener("click", () =>{
+            const keyword = input.value;
+            fetch(`https://www.omdbapi.com/?s=${keyword}&apikey=b0164cc`)
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data.Search);
+                display.innerHTML = data.Search.map((item) => `
+                <p>${item.Title}</P>
+                <img src = "${item.Poster}">    
+            
+                `);
+        })
+        });
+    </script>
+</body>
+</html>

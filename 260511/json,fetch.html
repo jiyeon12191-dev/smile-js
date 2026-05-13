@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="view"></p>
+    <button type="button" id="apiBtn">api불러오기</button>
+    <p id="apiResult"></p>
+    <script>
+
+
+
+
+     let arr = {name:"이순신",age:30};
+     localStorage.setItem("arr",JSON.stringify(arr));
+     const save = JSON.parse(localStorage.getItem("arr"));
+     console.log(save.name);
+    
+     document.querySelector("#apiBtn").addEventListener("click", () =>{
+         fetch("https://randomuser.me/api/")
+         .then(res => res.json())
+         .then(data =>{
+            const user = data.results[0];
+         const result = document.querySelector("#apiResult");
+         result.innerText = `${save.name}`;
+         console.log(save.name,save.age);
+        
+        
+        
+        
+        });
+        
+        
+        
+        
+        })
+
+
+    </script>
+</body>
+</html>

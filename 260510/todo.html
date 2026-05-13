@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="saveBtn" >저장</button>
+    <input type="text" id="diaryInput" placeholder="오늘 할일을 입력하세요">
+    <p id="diaryDisplay"></p>
+
+    <button type="button" id="apiBtn"></button>
+    <p id = apiResult></p>
+    <script>
+        const saveBtn = document.querySelector("#saveBtn");
+        const input = document.querySelector("#diaryInput");
+        const display = document.querySelector("#diaryDisplay");
+    
+    display.innerHTML=localStorage.getItem("diary");
+    
+    
+        saveBtn.addEventListener("click",()=>{
+    localStorage.setItem("diary",input.value);
+    display.innerHTML=input.value;
+    });
+
+    </script>
+</body>
+</html>

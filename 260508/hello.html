@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안녕하세요 출력</title>
+</head>
+<body>
+    <button type="button" id="btn">버튼</button>
+    <p id="hi"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const hi = document.querySelector("#hi");
+        // function hello(){
+        //     hi.textContent="안녕하세요";
+        // }
+        btn.addEventListener("click",hello);
+        function sayname(name){
+            name.textContent="안녕";
+        }
+        btn.addEventListener("click",sayname);
+        sayname(hi);
+    </script>
+</body>
+</html>
